@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.at.mapper.SysUsersMapper">
+    <resultMap id="BaseResultMap" type="com.at.pojo.SysUsers">
+        <id column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="user_account" jdbcType="VARCHAR" property="userAccount"/>
+        <result column="user_email" jdbcType="VARCHAR" property="userEmail"/>
+        <result column="user_passworld" jdbcType="VARCHAR" property="userPassworld"/>
+        <result column="user_pho" jdbcType="VARCHAR" property="userPho"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+    </resultMap>
+
+    <select id="getUser" resultMap="BaseResultMap">
+    select * from sys_users where user_account=#{userAccount} and user_passworld=#{userPassworld}
+  </select>
+</mapper>
