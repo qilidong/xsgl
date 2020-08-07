@@ -37,7 +37,7 @@ public class DispatcherController {
         if (user != null) {
             return "main";
         } else {
-            String errorMge = "输入的用户名或者密码错误！";
+            String errorMge = "您输入的用户名或者密码错误！";
             model.addAttribute("errorMge", errorMge);
             return "redirect:/login";
         }
